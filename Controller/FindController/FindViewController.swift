@@ -26,9 +26,9 @@ class FindViewController: UIViewController {
     var lastPage = 0
     var currentPage:Int = 0 {
         didSet{
-            let offset = self.view.frame.width / 5 * CGFloat(currentPage)
+            let offset = self.view.frame.width / 5 * CGFloat(currentPage) + ((self.view.frame.width / 5 - 37) / 2)
             UIView.animate(withDuration: 0.3) {
-                self.sliderImageView.frame.origin = CGPoint(x: offset, y: -1)
+                self.sliderImageView.frame.origin = CGPoint(x: offset, y: 0)
             }
             
             if currentPage > lastPage {
@@ -67,9 +67,15 @@ class FindViewController: UIViewController {
         controllers.append(listController)
         controllers.append(anchorController)
         
-        sliderImageView = UIImageView(frame: CGRect(x: 0, y: -1, width: self.view.frame.width / 5 , height: 3))
+        sliderImageView = UIImageView()
         sliderImageView.image = UIImage(named: "slider")
         SliderView.addSubview(sliderImageView)
+        sliderImageView.snp.makeConstraints { (make) in
+            make.size.equalTo(CGSize(width: 37, height: 2))
+            make.left.equalTo(SliderView.snp.left).offset((self.view.frame.width / 5 - 37) / 2)
+            make.top.equalTo(SliderView.snp.top)
+            make.bottom.equalTo(SliderView.snp.bottom)
+        }
         
         let btnArray = ["推荐","分类","广播","列表","主播"]
         AddSubtitleBtn(btnArray: btnArray)
