@@ -1,26 +1,142 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vR1-8o-vdx">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--发现-->
         <scene sceneID="7tA-3Y-Wkl">
             <objects>
-                <viewController id="Yy4-a5-H31" sceneMemberID="viewController">
+                <viewController id="Yy4-a5-H31" customClass="FindViewController" customModule="FM" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zeJ-oU-aOB">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TX3-2C-6sP" userLabel="SubtitleView">
+                                <rect key="frame" x="0.0" y="64" width="375" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="VVB-78-Po2"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eXX-Z5-RgM" userLabel="SliderView">
+                                <rect key="frame" x="0.0" y="104" width="375" height="1"/>
+                            </view>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DnE-3J-bTH">
+                                <rect key="frame" x="0.0" y="104" width="375" height="563"/>
+                                <connections>
+                                    <segue destination="9Wi-pz-7iw" kind="embed" id="moL-rX-HNO"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="DnE-3J-bTH" firstAttribute="top" secondItem="zeJ-oU-aOB" secondAttribute="top" constant="104" id="0Pb-sG-uAe"/>
+                            <constraint firstItem="eXX-Z5-RgM" firstAttribute="leading" secondItem="TX3-2C-6sP" secondAttribute="leading" id="0R3-E0-mIY"/>
+                            <constraint firstItem="TX3-2C-6sP" firstAttribute="leading" secondItem="cy7-GW-PIq" secondAttribute="leading" id="31T-fg-whE"/>
+                            <constraint firstItem="TX3-2C-6sP" firstAttribute="trailing" secondItem="cy7-GW-PIq" secondAttribute="trailing" id="3hh-r2-i6E"/>
+                            <constraint firstItem="eXX-Z5-RgM" firstAttribute="trailing" secondItem="DnE-3J-bTH" secondAttribute="trailing" id="7Yp-LI-owX"/>
+                            <constraint firstItem="DnE-3J-bTH" firstAttribute="bottom" secondItem="cy7-GW-PIq" secondAttribute="bottom" id="Ad3-3D-1tE"/>
+                            <constraint firstItem="TX3-2C-6sP" firstAttribute="top" secondItem="cy7-GW-PIq" secondAttribute="top" id="C0L-rB-BDS"/>
+                            <constraint firstItem="DnE-3J-bTH" firstAttribute="top" secondItem="eXX-Z5-RgM" secondAttribute="bottom" constant="-1" id="QQz-Lw-x0D"/>
+                            <constraint firstItem="eXX-Z5-RgM" firstAttribute="leading" secondItem="DnE-3J-bTH" secondAttribute="leading" id="ezj-mw-9dp"/>
+                            <constraint firstItem="eXX-Z5-RgM" firstAttribute="trailing" secondItem="TX3-2C-6sP" secondAttribute="trailing" id="nS7-Sg-sDB"/>
+                            <constraint firstItem="eXX-Z5-RgM" firstAttribute="top" secondItem="TX3-2C-6sP" secondAttribute="bottom" id="xDJ-yT-6cT"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="cy7-GW-PIq"/>
                     </view>
-                    <navigationItem key="navigationItem" id="c9k-6w-K32"/>
+                    <navigationItem key="navigationItem" title="发现" id="c9k-6w-K32"/>
+                    <connections>
+                        <outlet property="SliderView" destination="eXX-Z5-RgM" id="8Cc-y6-zJ3"/>
+                        <outlet property="SubtitileView" destination="TX3-2C-6sP" id="bgv-EJ-1XB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t4v-Vi-Q7R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="916" y="-841"/>
+            <point key="canvasLocation" x="728.79999999999995" y="-842.42878560719646"/>
+        </scene>
+        <!--Recommend View Controller-->
+        <scene sceneID="bo4-kE-VGo">
+            <objects>
+                <viewController storyboardIdentifier="RecommendID" id="POV-n6-sMW" customClass="RecommendViewController" customModule="FM" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="x24-eb-Nmd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Agp-cr-OCk"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xD2-d4-ZTg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-422" y="-154"/>
+        </scene>
+        <!--Classify View Controller-->
+        <scene sceneID="5xl-kG-UJc">
+            <objects>
+                <viewController storyboardIdentifier="ClassifyID" id="8yY-CI-LeJ" customClass="ClassifyViewController" customModule="FM" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EXa-Bd-xMG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="V73-ug-l0S"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Mx-IK-Zjr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="294" y="-154"/>
+        </scene>
+        <!--Radio View Controller-->
+        <scene sceneID="8NF-4v-sPg">
+            <objects>
+                <viewController storyboardIdentifier="RadioID" id="11f-PI-IpF" customClass="RadioViewController" customModule="FM" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mus-EE-4aT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="omj-4o-2cq"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zR2-w6-VEJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1041" y="-154"/>
+        </scene>
+        <!--List View Controller-->
+        <scene sceneID="GlS-zB-CHA">
+            <objects>
+                <viewController storyboardIdentifier="ListID" id="rbj-T7-h8p" customClass="ListViewController" customModule="FM" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7wK-OK-Cca">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="FmQ-Xu-qYp"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jMY-FY-gyw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1738" y="-154"/>
+        </scene>
+        <!--Anchor View Controller-->
+        <scene sceneID="30k-ac-sjP">
+            <objects>
+                <viewController storyboardIdentifier="AnchorID" id="mdd-xj-aoT" customClass="AnchorViewController" customModule="FM" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dKD-WM-ghO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="GCT-CE-65y"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q5f-8p-L4a" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2495" y="-154"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="tN4-4t-aft">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="9Wi-pz-7iw" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DGp-bY-bAD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1575" y="-843"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="TNF-y6-nVm">
@@ -41,7 +157,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="82S-BY-eR0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="210" y="-840"/>
+            <point key="canvasLocation" x="-105" y="-842"/>
         </scene>
     </scenes>
     <resources>
